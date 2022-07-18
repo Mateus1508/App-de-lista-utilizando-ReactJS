@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';;
+import React,{ useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
@@ -21,11 +21,15 @@ export default function App() {
         completed: false,
       },
     ];
-    if (tasks.indexOf(newTasks) !== -1) return;
-    
    setTasks(newTasks);
   }
 
+  const localStorageTasks = JSON.parse(localStorage.getItem('newTasks'));
+  let newTasks = localStorage.getItem('newTasks') !== null ? localStorageTasks : [];
+  
+  const updateLocalStorage = () => {
+    localStorage.setItem('newTasks', JSON.stringify(newTasks));
+  }
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
       if (task.id === taskId) return { ...task, completed: !task.completed};
@@ -39,6 +43,7 @@ export default function App() {
     const newTasks = tasks.filter((task) => task.id !== taskId);
 
     setTasks(newTasks);
+    updateLocalStorage();
   }
  
   return (

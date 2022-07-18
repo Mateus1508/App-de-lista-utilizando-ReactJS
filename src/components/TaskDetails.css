@@ -14,6 +14,21 @@
 }
 
 .back-button-container {
-  width: 30%;
+  flex: 1;
   margin-top: 10px;
+}
+ .task-details-input {
+  margin-top: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+  flex: 2; 
+  background-color: #87cefa3f;
+  color: #87CEFA;
+  font-size: 20px;
+  outline: 0;
+ }
+ .add-details-button {
+  flex: 1;
 }

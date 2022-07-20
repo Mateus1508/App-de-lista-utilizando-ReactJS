@@ -12,7 +12,9 @@ cursor: pointer;
 border: none;
 }
 @media (max-width: 370px){
-  margin: 5px 0;
+  .button{
+    margin: 5px 0;
+  }
 }
 
 .button:hover {

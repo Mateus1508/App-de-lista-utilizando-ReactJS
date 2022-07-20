@@ -7,7 +7,6 @@
 
 .add-task-input {
   height: 40px;
-  margin: 15px 0;
   padding: 0 10px;
   border-radius: 5px;
   border: none;
@@ -16,6 +15,9 @@
   color: #87CEFA;
   font-size: 14px;
   outline: 0;
+}
+@media (max-width: 370px) {
+  margin: 15px 0;
 }
 
 .add-task-button {
